@@ -1,3 +1,5 @@
+import asyncio
+
 from discord.ext import commands
 import discord, color_table
 from main import thebot
@@ -26,6 +28,29 @@ class Rank(commands.Cog):
         else:
             embed.add_field(name="Animaux", value=str(database['users'][UserID]['rank']['animals']) + " animaux")
         await ctx.send(embed=embed)
+
+    @commands.command()
+    async def delete_account(self, ctx):
+        UserID = str(ctx.author.id)
+        database = reader("././db.json")
+        if not UserID in database['users']:
+            await ctx.send("Vous n'avez pas de compte!")
+            return
+        await ctx.send(":warning: ATTENTION ! :warning:\nVous vous apprêtez à supprimer (donc réinitialiser) votre compte ! Êtes vous sûr ? (ajouter la réaction ✅ pour continuer.)")
+
+        def check(reaction, user):
+            return user == ctx.message.author and str(reaction.emoji) == '✅'
+
+        try:
+            reaction, user = await self.client.wait_for('reaction_add', timeout=5.0, check=check)
+        except asyncio.TimeoutError:
+            await ctx.send("Opération annulé.")
+        else:
+            del database['users'][UserID]
+            with open("././db.json", 'w', encoding='utf8') as jsonFile:
+                json.dump(database, jsonFile, indent=4)
+            await ctx.send("Compte supprimé/réinitialisé. Merci d'avoir utilisé Sympatic !")
+
 
     @commands.Cog.listener()
     async def on_message(self, message):

@@ -7,7 +7,7 @@ from tokenbot import *
 
 Bot_is_Lock = False  # variable que tu vas importer dans les autres class
 
-print("Project Sympatic 1.00.2")
+print("Project Sympatic 1.00.3")
 print("Connexion en cours à Discord...")
 
 
@@ -92,4 +92,4 @@ async def ping(ctx):
 
 starter()
 
-thebot.run(token, bot=True, reconnect=True)
+thebot.run(token, reconnect=True)
