@@ -15,7 +15,7 @@ class Other(commands.Cog):
         embed.add_field(name=":arrow_up: Rank", value="`rank`: Voir votre rank !")
         embed.add_field(name=":zzz: Autres", value="`help`: Tu es dessus...!\n`inviteme`: M'inviter sur ton serveur !\n`important`: message important du développeur à l'intention de ses utilisateurs.")
         embed.set_footer(text=f'Sympatic v1.00.1 - En réponse à {ctx.message.author.name} - Créé par Rixy',
-                        icon_url=thebot.user.avatar_url)
+                        icon_url=thebot.user.avatar.url)
         await ctx.send(embed=embed)
 
     @commands.command()
@@ -27,7 +27,8 @@ class Other(commands.Cog):
         await ctx.author.send(embed=embed)
     @commands.command()
     async def important(self, ctx):
-        await ctx.send("Ceci est un message assez important du développeur. Parce que la version 2.0 de Discord.py, la librarie que j'utilise pour créer ce bot, arrive à grand pas, le bot aura sûrement besoin la réadaptation de son code. Quand cette nouvelle version sortira, le bot ne se rallumera pas avant un petit moment le temps que j'adapte son code.")
+        await ctx.send("Ceci est un message assez important du développeur. Le bot utilise la version alpha de Discord.py, librarie servant à faire fonctionner ce bot. Il ce pourrait qu'il y ait des bugs qui ne soient pas en rapport avec mon code, mais avec Discord.py. Merci ! -Rixy")
+
 
 
 def setup(client):
