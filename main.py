@@ -7,7 +7,7 @@ from tokenbot import *
 
 Bot_is_Lock = False  # variable que tu vas importer dans les autres class
 
-print("Project Sympatic 1.00.1")
+print("Project Sympatic 1.00.2")
 print("Connexion en cours à Discord...")
 
 
