@@ -11,10 +11,11 @@ class Other(commands.Cog):
     async def help(self, ctx):
         color_list = [c for c in color_table.colors.values()]
         embed = discord.Embed(title="Liste des commandes", color=random.choice(color_list))
-        embed.add_field(name=":video_game: Ultra Mini Games", value="`dice`: Faire tomber un dé !\n`doublemoney`(demande un argument: nombre de money à doubler): doublez potentiellement l'argent que vous voulez doubler !")
-        embed.add_field(name=":arrow_up: Rank", value="`rank`: Voir votre rank !")
+        embed.add_field(name=":game_die: Ultra Mini Games", value="`dice`: Faire tomber un dé !\n`doublemoney`(demande un argument: nombre de money à doubler): doublez potentiellement l'argent que vous voulez doubler !")
+        embed.add_field(name=":arrow_up: Rank", value="`rank`: Voir votre rank !\n`buygame`(demande un argument: id du jeu): Acheter un jeu !")
+        embed.add_field(name=":video_game: Mini-jeux", value="`animal_catch`(ID n°1): Jeu où tu dois essayer d'attraper un animal pour en gagner un.")
         embed.add_field(name=":zzz: Autres", value="`help`: Tu es dessus...!\n`inviteme`: M'inviter sur ton serveur !\n`important`: message important du développeur à l'intention de ses utilisateurs.")
-        embed.set_footer(text=f'Sympatic v1.00.1 - En réponse à {ctx.message.author.name} - Créé par Rixy',
+        embed.set_footer(text=f'Sympatic v1.00.2 - En réponse à {ctx.message.author.name} - Créé par Rixy',
                         icon_url=thebot.user.avatar.url)
         await ctx.send(embed=embed)
 
