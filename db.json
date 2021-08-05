@@ -1,4 +1,14 @@
 {
   "users": {
-  }
+  },
+  "games": {
+        "1": {
+            "name": "Animal Catch",
+            "desc": "Jeu o\u00f9 tu dois essayer d'attraper un animal pour en gagner un.",
+            "moneytobuy": 50
+        }
+    },
+  "options": {
+        "xp_multiplier": 55
+    }
 }
